@@ -18,6 +18,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -25,32 +27,47 @@ public class frmPrincipal extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        lblQuantidade = new javax.swing.JLabel();
+        lblTempo = new javax.swing.JLabel();
+        btrBubblesort = new javax.swing.JRadioButton();
+        btrInsertsort = new javax.swing.JRadioButton();
+        btrMergesort = new javax.swing.JRadioButton();
+        btrQuicksort = new javax.swing.JRadioButton();
+        btnExportarArquivo = new javax.swing.JButton();
+        btnExecutar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        lblQuantidade.setText("Quantidade de arquivos:");
 
-        jLabel2.setText("jLabel2");
+        lblTempo.setText("Tempo:");
 
-        jRadioButton1.setText("Bubblesort");
+        buttonGroup1.add(btrBubblesort);
+        btrBubblesort.setText("Bubblesort");
 
-        jRadioButton2.setText("Insertsort");
+        buttonGroup1.add(btrInsertsort);
+        btrInsertsort.setText("Insertsort");
 
-        jRadioButton3.setText("Mergesort");
+        buttonGroup1.add(btrMergesort);
+        btrMergesort.setText("Mergesort");
 
-        jRadioButton4.setText("Quicksort");
+        buttonGroup1.add(btrQuicksort);
+        btrQuicksort.setText("Quicksort");
 
-        jButton1.setText("Exportar Arquivo");
+        btnExportarArquivo.setText("Exportar Arquivo");
+        btnExportarArquivo.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnExportarArquivoActionPerformed(evt);
+            }
+        });
+
+        btnExecutar.setText("Executar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,41 +76,49 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
+                    .addComponent(btnExecutar)
+                    .addComponent(lblTempo)
+                    .addComponent(lblQuantidade)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jButton1))
+                            .addComponent(btrBubblesort)
+                            .addComponent(btrInsertsort)
+                            .addComponent(btnExportarArquivo))
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton3))))
+                            .addComponent(btrQuicksort)
+                            .addComponent(btrMergesort))))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(38, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnExportarArquivo)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton3))
+                    .addComponent(btrBubblesort)
+                    .addComponent(btrMergesort))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton4))
+                    .addComponent(btrInsertsort)
+                    .addComponent(btrQuicksort))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(lblQuantidade)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(82, 82, 82))
+                .addComponent(lblTempo)
+                .addGap(33, 33, 33)
+                .addComponent(btnExecutar)
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnExportarArquivoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnExportarArquivoActionPerformed
+    {//GEN-HEADEREND:event_btnExportarArquivoActionPerformed
+        
+    }//GEN-LAST:event_btnExportarArquivoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -131,13 +156,14 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnExecutar;
+    private javax.swing.JButton btnExportarArquivo;
+    private javax.swing.JRadioButton btrBubblesort;
+    private javax.swing.JRadioButton btrInsertsort;
+    private javax.swing.JRadioButton btrMergesort;
+    private javax.swing.JRadioButton btrQuicksort;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JLabel lblQuantidade;
+    private javax.swing.JLabel lblTempo;
     // End of variables declaration//GEN-END:variables
 }

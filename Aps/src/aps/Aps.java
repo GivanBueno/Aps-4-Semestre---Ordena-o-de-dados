@@ -11,15 +11,16 @@ import Apresentacao.frmPrincipal;
  *
  * @author julio
  */
-public class Aps {
+public class Aps 
+{
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) 
     {
-        frmPrincipal frmP = new frmPrincipal(null, true);
-        frmP.setvisuble = true;
+        frmPrincipal frmP = new frmPrincipal();
+        frmP.setVisible(true);
     }
     
 }

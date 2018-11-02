@@ -14,9 +14,12 @@ public class Ordenacao
      public int[] bubbleSort(int vetor[]) 
     {
         long tempoinicial = System.currentTimeMillis();
-        for (int i = vetor.length; i >= 1; i--) {
-            for (int j = 1; j < i; j++) {
-                if (vetor[j - 1] > vetor[j]) {
+        for (int i = vetor.length; i >= 1; i--) 
+        {
+            for (int j = 1; j < i; j++) 
+            {
+                if (vetor[j - 1] > vetor[j]) 
+                {
                     int aux = vetor[j];
                     vetor[j] = vetor[j - 1];
                     vetor[j - 1] = aux;
@@ -33,10 +36,12 @@ public class Ordenacao
     public int[] insertionSort(int[] vetor) 
     {
         long tempoinicial = System.currentTimeMillis();
-        for (int i = 0; i < vetor.length; i++) {
+        for (int i = 0; i < vetor.length; i++) 
+        {
             int atual = vetor[i];
             int j = i - 1;
-            while (j >= 0 && vetor[j] >= atual) {
+            while (j >= 0 && vetor[j] >= atual) 
+            {
                 vetor[j + 1] = vetor[j];
                 j--;
             }
@@ -48,11 +53,13 @@ public class Ordenacao
         return vetor;
     }
     
-    public class MergeSort {
+   
  
-    public static int[] sort(int[] array) {
+    public static int[] sort(int[] array) 
+    {
        
-        if (array.length <= 1) {
+        if (array.length <= 1) 
+        {
            
             return array;
         }
@@ -62,12 +69,14 @@ public class Ordenacao
  
         int[] aux = new int[array.length];
  
-        for (int i = 0; i < meio; i++) {
+        for (int i = 0; i < meio; i++) 
+        {
             esq[i] = array[i];
         }
  
         int auxIndex = 0;
-        for (int i = meio; i < array.length; i++) {
+        for (int i = meio; i < array.length; i++) 
+        {
             dir[auxIndex] = array[i];
             auxIndex++;
         }
@@ -79,7 +88,7 @@ public class Ordenacao
  
         return aux;
     }
- }
+ 
  
     static int[] mergesort(int[] esq, int[] dir) 
     {
@@ -87,22 +96,33 @@ public class Ordenacao
  
         int indexDir = 0, indexEsq = 0, indexAux = 0;
  
-        while (indexEsq < esq.length || indexDir < dir.length) {
-            if (indexEsq < esq.length && indexDir < dir.length) {
-                if (esq[indexEsq] <= dir[indexDir]) {
+        while (indexEsq < esq.length || indexDir < dir.length) 
+        {
+            if (indexEsq < esq.length && indexDir < dir.length) 
+            {
+                if (esq[indexEsq] <= dir[indexDir]) 
+                {
                     aux[indexAux] = esq[indexEsq];
                     indexAux++;
                     indexEsq++;
-                } else {
+                } 
+                else 
+                {
                     aux[indexAux] = dir[indexDir];
                     indexAux++;
                     indexDir++;
                 }
-            } else if (indexEsq < esq.length) {
+            } 
+            else if (indexEsq < esq.length) 
+            {
                 aux[indexAux] = esq[indexEsq];
                 indexAux++;
                 indexEsq++;
-            } else if (indexDir < dir.length) {
+            } 
+            
+            else if (indexDir < dir.length) 
+            
+            {
                 aux[indexAux] = dir[indexDir];
                 indexAux++;
                 indexDir++;
@@ -111,14 +131,14 @@ public class Ordenacao
         return aux;
     }
     
-    public class QuickSort {
- 
- 
-    public static int[] quicksort(int vet[], int ini, int fim) {
+    
+    public static int[] quicksort(int vet[], int ini, int fim)
+    {
  
         int meio;
  
-        if (ini < fim) {
+        if (ini < fim) 
+        {
  
             meio = partition(vet, ini, fim);
  
@@ -134,7 +154,8 @@ public class Ordenacao
  
  
  
-    public static int partition(int vet[], int ini, int fim) {
+    public static int partition(int vet[], int ini, int fim) 
+    {
  
         int pivo, topo, i;
  
@@ -144,9 +165,11 @@ public class Ordenacao
  
  
  
-        for (i = ini + 1; i <= fim; i++) {
+        for (i = ini + 1; i <= fim; i++) 
+        {
  
-            if (vet[i] < pivo) {
+            if (vet[i] < pivo) 
+            {
  
                 vet[topo] = vet[i];
  
@@ -163,5 +186,5 @@ public class Ordenacao
         return topo;
  
     }
-  }
+  
 }

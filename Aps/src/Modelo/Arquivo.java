@@ -1,3 +1,5 @@
+package Modelo;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,7 +9,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-package Modelo;
 
 /**
  *
@@ -15,7 +16,8 @@ package Modelo;
  */
 public class Arquivo 
 {
-    public int[] lerArquivo(String endereco) throws FileNotFoundException, IOException {
+    public int[] lerArquivo(String endereco) throws FileNotFoundException, IOException 
+    {
  
         File arquivo = new File(endereco);
  
@@ -27,7 +29,8 @@ public class Arquivo
  
         BufferedReader bufferreader = new BufferedReader(filereader);
  
-        while (bufferreader.ready()) {
+        while (bufferreader.ready()) 
+        {
  
             dadosdatabase = bufferreader.readLine();
         }
@@ -36,7 +39,8 @@ public class Arquivo
  
         StringTokenizer databasetoken = new StringTokenizer(dadosdatabase, ";");
  
-        while (databasetoken.hasMoreTokens()) {
+        while (databasetoken.hasMoreTokens()) 
+        {
             array[counter] = Integer.parseInt(databasetoken.nextToken());
             counter++;
         }
@@ -54,7 +58,8 @@ public class Arquivo
  
         try {
  
-            if (!arquivo.exists()) {
+            if (!arquivo.exists()) 
+            {
                 arquivo.createNewFile();
             }
  
@@ -62,7 +67,8 @@ public class Arquivo
  
             BufferedWriter bw = new BufferedWriter(fw);
  
-            for (int counter = 0; counter < (array.length - 1); counter++) {
+            for (int counter = 0; counter < (array.length - 1); counter++) 
+            {
                 bw.write(array[counter]+";");
                 //bw.newLine();
             }
@@ -70,7 +76,10 @@ public class Arquivo
             bw.close();
             fw.close();
  
-        } catch (IOException ex) {
+        } 
+        catch (IOException ex) 
+        {
+            
         }
  
     }
