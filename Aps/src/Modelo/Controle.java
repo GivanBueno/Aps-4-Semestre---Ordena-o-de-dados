@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Modelo;
 
 /**
@@ -58,7 +54,7 @@ public class Controle
         public int[] mergeSort(int[] array) 
         {
             long tempoinicial = System.currentTimeMillis();
-            array = MergeSort.sort(array);
+            array = Modelo.Ordenacao.sort(array);
             long tempofinal = System.currentTimeMillis();
             long tempototal = tempofinal - tempoinicial;
             System.out.println("Tempo de Processamento de MergeSort: " + tempototal + "ms");
@@ -68,7 +64,7 @@ public class Controle
         public int[] quickSort(int[] array) 
         {
             long tempoinicial = System.currentTimeMillis();
-            array = QuickSort.quicksort(array, 0, (array.length - 1));
+            array = Modelo.Ordenacao.quicksort(array, 0, (array.length - 1));
             long tempofinal = System.currentTimeMillis();
             long tempototal = tempofinal - tempoinicial;
             System.out.println("Tempo de Processamento de QuickSort: " + tempototal + "ms");

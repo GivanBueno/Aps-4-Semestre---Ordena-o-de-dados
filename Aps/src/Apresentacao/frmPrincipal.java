@@ -1,10 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Apresentacao;
 
+package Apresentacao;
+import Modelo.NumeroRandomico;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author julio
@@ -39,6 +39,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         btrQuicksort = new javax.swing.JRadioButton();
         btnExportarArquivo = new javax.swing.JButton();
         btnExecutar = new javax.swing.JButton();
+        btnCriarTxt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +70,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         btnExecutar.setText("Executar");
 
+        btnCriarTxt.setText("Criar txt");
+        btnCriarTxt.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCriarTxtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -76,19 +86,25 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnExecutar)
-                    .addComponent(lblTempo)
-                    .addComponent(lblQuantidade)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btrBubblesort)
-                            .addComponent(btrInsertsort)
-                            .addComponent(btnExportarArquivo))
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btrQuicksort)
-                            .addComponent(btrMergesort))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                            .addComponent(lblTempo)
+                            .addComponent(lblQuantidade)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btrBubblesort)
+                                    .addComponent(btrInsertsort)
+                                    .addComponent(btnExportarArquivo))
+                                .addGap(34, 34, 34)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btrQuicksort)
+                                    .addComponent(btrMergesort))))
+                        .addContainerGap(41, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnExecutar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCriarTxt)
+                        .addGap(56, 56, 56))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,7 +124,9 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblTempo)
                 .addGap(33, 33, 33)
-                .addComponent(btnExecutar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnExecutar)
+                    .addComponent(btnCriarTxt))
                 .addGap(26, 26, 26))
         );
 
@@ -117,8 +135,23 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void btnExportarArquivoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnExportarArquivoActionPerformed
     {//GEN-HEADEREND:event_btnExportarArquivoActionPerformed
-        
+
     }//GEN-LAST:event_btnExportarArquivoActionPerformed
+
+    private void btnCriarTxtActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCriarTxtActionPerformed
+    {//GEN-HEADEREND:event_btnCriarTxtActionPerformed
+        NumeroRandomico randomico = new NumeroRandomico();
+      
+        try
+        {
+            randomico.GerarNumeroRandomico();
+            JOptionPane.showMessageDialog(null, randomico.mensagem);
+        }
+        catch (IOException ex)
+        {
+            JOptionPane.showMessageDialog(null, randomico.mensagem);
+        }
+    }//GEN-LAST:event_btnCriarTxtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,6 +189,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCriarTxt;
     private javax.swing.JButton btnExecutar;
     private javax.swing.JButton btnExportarArquivo;
     private javax.swing.JRadioButton btrBubblesort;

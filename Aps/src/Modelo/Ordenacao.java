@@ -90,7 +90,7 @@ public class Ordenacao
     }
  
  
-    static int[] mergesort(int[] esq, int[] dir) 
+    public static int[] mergesort(int[] esq, int[] dir) 
     {
         int[] aux = new int[esq.length + dir.length];
  
