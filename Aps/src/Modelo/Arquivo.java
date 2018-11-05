@@ -19,9 +19,9 @@ public class Arquivo
     public int[] lerArquivo(String endereco) throws FileNotFoundException, IOException 
     {
  
-        File arquivo = new File(endereco);
+        File arquivo = new File("C:\\Users\\User\\Documents\\Aps 4º Semestre\\Teste1.txt");
  
-        int[] array = new int[65000];
+        int[] array = new int[100000];
  
         String dadosdatabase = null;
  

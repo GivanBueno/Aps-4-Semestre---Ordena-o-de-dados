@@ -1,6 +1,9 @@
 
 package Apresentacao;
+import Modelo.Arquivo;
+import Modelo.Controle;
 import Modelo.NumeroRandomico;
+import Modelo.Ordenacao;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,6 +21,20 @@ public class frmPrincipal extends javax.swing.JFrame {
         initComponents();
     }
 
+    private void Executar() throws IOException
+    {
+         Arquivo arquivo = new Arquivo();
+        Controle controle = new Controle();
+       
+        
+        
+        int[] arrayDesordenado = new int[65000];
+        int[] arrayOrdenado = new int[65000];
+
+        arrayDesordenado = arquivo.lerArquivo("C:\\Users\\User\\Documents\\Aps 4º Semestre\\Teste1.txt");
+        arrayOrdenado = controle.bubbleSort(arrayDesordenado);
+        arquivo.gravarArquivo("C:\\Users\\User\\Documents\\Aps 4º Semestre\\Teste1.txt", arrayOrdenado);
+    }
    
 
     /**
@@ -69,6 +86,13 @@ public class frmPrincipal extends javax.swing.JFrame {
         });
 
         btnExecutar.setText("Executar");
+        btnExecutar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnExecutarActionPerformed(evt);
+            }
+        });
 
         btnCriarTxt.setText("Criar txt");
         btnCriarTxt.addActionListener(new java.awt.event.ActionListener()
@@ -152,6 +176,51 @@ public class frmPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, randomico.mensagem);
         }
     }//GEN-LAST:event_btnCriarTxtActionPerformed
+
+    private void btnExecutarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnExecutarActionPerformed
+    {//GEN-HEADEREND:event_btnExecutarActionPerformed
+        if(this.btrBubblesort.isSelected())
+        {
+            try
+            {
+                Ordenacao ordenacao = new Ordenacao();
+                this.Executar();
+                
+            }
+            catch (IOException ex)
+            {
+                JOptionPane.showMessageDialog(null, "Erro");
+            }
+            
+        }
+        else
+        {
+            if(this.btrInsertsort.isSelected())
+            {
+                JOptionPane.showMessageDialog(null, "Insertionsort está selecionado");
+            }
+            else
+            {
+                if(this.btrMergesort.isSelected())
+                {
+                    JOptionPane.showMessageDialog(null, "Mergesort está selecionado");
+                }
+                else
+                {
+                    if(this.btrQuicksort.isSelected())
+                    {
+                        JOptionPane.showMessageDialog(null, "Quiscksort está selecionado");
+                    }
+                    else
+                    {
+                        JOptionPane.showMessageDialog(null, "Não há nada selecionado");
+                    }
+                    
+                }
+            }
+        }
+            
+    }//GEN-LAST:event_btnExecutarActionPerformed
 
     /**
      * @param args the command line arguments

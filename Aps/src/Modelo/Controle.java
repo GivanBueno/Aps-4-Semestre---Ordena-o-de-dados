@@ -7,8 +7,7 @@ package Modelo;
  */
 public class Controle 
 {
-    public class Ordenacao 
-    {
+    
  
         public int[] insertionSort(int[] vetor) 
         {
@@ -78,5 +77,5 @@ public class Controle
                 System.out.println(array[counter]);
             }
         }
-    }
+    
 }

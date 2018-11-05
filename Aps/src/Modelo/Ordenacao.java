@@ -11,8 +11,11 @@ package Modelo;
  */
 public class Ordenacao 
 {
+
+    
      public int[] bubbleSort(int vetor[]) 
     {
+        
         long tempoinicial = System.currentTimeMillis();
         for (int i = vetor.length; i >= 1; i--) 
         {
