@@ -16,10 +16,11 @@ import java.util.StringTokenizer;
  */
 public class Arquivo 
 {
+    public String mensagem;
     public int[] lerArquivo(String endereco) throws FileNotFoundException, IOException 
     {
  
-        File arquivo = new File("C:\\Users\\User\\Documents\\Aps 4º Semestre\\Teste1.txt");
+        File arquivo = new File("ArquivoDesordenado.txt");
  
         int[] array = new int[100000];
  
@@ -79,7 +80,7 @@ public class Arquivo
         } 
         catch (IOException ex) 
         {
-            
+            this.mensagem = "Erro ao criar o arquivo";
         }
  
     }

@@ -21,7 +21,7 @@ public class Controle
                     vetor[j + 1] = vetor[j];
                     j--;
                 }
-                vetor[j + 1] = atual;;
+                vetor[j + 1] = atual;
             }
             long tempofinal = System.currentTimeMillis();
             long tempototal = tempofinal - tempoinicial;

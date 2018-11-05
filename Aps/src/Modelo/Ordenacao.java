@@ -11,7 +11,7 @@ package Modelo;
  */
 public class Ordenacao 
 {
-
+    public long tempoTotal;
     
      public int[] bubbleSort(int vetor[]) 
     {
@@ -30,8 +30,7 @@ public class Ordenacao
             }
         }
         long tempofinal = System.currentTimeMillis();
-        long tempototal = tempofinal - tempoinicial;
-        System.out.println("Tempo de Processamento de BubbleSort: " + tempototal + "ms");
+        this.tempoTotal = tempofinal - tempoinicial;
         return vetor;
     }
     
@@ -51,8 +50,8 @@ public class Ordenacao
             vetor[j + 1] = atual;;
         }
         long tempofinal = System.currentTimeMillis();
-        long tempototal = tempofinal - tempoinicial;
-        System.out.println("Tempo de Processamento de InsertionSort: " + tempototal + "ms");
+        this.tempoTotal = tempofinal - tempoinicial;
+        //System.out.println("Tempo de Processamento de InsertionSort: " + tempototal + "ms");
         return vetor;
     }
     
@@ -131,6 +130,9 @@ public class Ordenacao
                 indexDir++;
             }
         }
+        
+        long tempoinicial = System.currentTimeMillis();
+        
         return aux;
     }
     
