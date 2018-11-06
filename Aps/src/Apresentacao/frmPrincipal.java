@@ -23,47 +23,37 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void Executar() throws IOException
     {
-        Arquivo arquivo = new Arquivo();
-        Ordenacao ordenacao = new Ordenacao();
-        Modelo.Controle controle = new Modelo.Controle();
-       
         
-        
-        int[] arrayDesordenado = new int[100000];
-        int[] arrayOrdenado = new int[100000];
-
-        
-        arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
+        Controle controle = new Controle();
         
         if (this.btrBubblesort.isSelected())
         {
-            arrayOrdenado = ordenacao.bubbleSort(arrayDesordenado);
-            lblTempo.setText(String.valueOf(ordenacao.tempoTotal));
+            controle.Bubblesort();
+            lblTempo.setText(String.valueOf(controle.tempo) + " ms");
         }
         else
         {
             if(this.btrInsertsort.isSelected())
             {
-                arrayOrdenado = ordenacao.insertionSort(arrayOrdenado);
-                lblTempo.setText(String.valueOf(ordenacao.tempoTotal));
+                controle.Insertionsort();
+                lblTempo.setText(String.valueOf(controle.tempo) + " ms");
             }
             else
             {
                 if(this.btrMergesort.isSelected())
                 {
-                    arrayOrdenado = controle.mergeSort(arrayOrdenado);
+                    
                 }
                 else
                 {
                     if(this.btrQuicksort.isSelected())
                     {
-                        arrayOrdenado = controle.quickSort(arrayOrdenado);
+                        
                     }
                 }
             }
         }
         
-       //arquivo.gravarArquivo("C:\\Users\\julio\\OneDrive\\Área de Trabalho\\Aps-4-Semestre---Ordena-o-de-dados-master\\Aps\\Teste2.txt", arrayOrdenado);
        
     }
    
@@ -75,10 +65,11 @@ public class frmPrincipal extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        lblQuantidade = new javax.swing.JLabel();
+        lblTempoTotalEmMilisegundos = new javax.swing.JLabel();
         lblTempo = new javax.swing.JLabel();
         btrBubblesort = new javax.swing.JRadioButton();
         btrInsertsort = new javax.swing.JRadioButton();
@@ -86,14 +77,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         btrQuicksort = new javax.swing.JRadioButton();
         btnExecutar = new javax.swing.JButton();
         btnCriarTxt = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblQuantidade.setText("Quantidade de arquivos:");
-
-        lblTempo.setText("Tempo:");
+        lblTempoTotalEmMilisegundos.setText("Tempo total em milisegundos:");
 
         buttonGroup1.add(btrBubblesort);
         btrBubblesort.setText("Bubblesort");
@@ -108,15 +95,19 @@ public class frmPrincipal extends javax.swing.JFrame {
         btrQuicksort.setText("Quicksort");
 
         btnExecutar.setText("Executar");
-        btnExecutar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnExecutar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnExecutarActionPerformed(evt);
             }
         });
 
         btnCriarTxt.setText("Criar txt");
-        btnCriarTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnCriarTxt.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnCriarTxtActionPerformed(evt);
             }
         });
@@ -130,6 +121,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTempoTotalEmMilisegundos)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btrBubblesort)
@@ -137,47 +129,37 @@ public class frmPrincipal extends javax.swing.JFrame {
                                 .addGap(72, 72, 72)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btrQuicksort)
-                                    .addComponent(btrMergesort)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblTempo)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblQuantidade)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel1))))
-                        .addContainerGap(41, Short.MAX_VALUE))
+                                    .addComponent(btrMergesort))))
+                        .addGap(0, 41, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnExecutar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCriarTxt)
-                        .addGap(56, 56, 56))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnExecutar)
+                                .addGap(59, 59, 59)
+                                .addComponent(btnCriarTxt)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btrBubblesort)
                     .addComponent(btrMergesort))
-                .addGap(11, 11, 11)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btrInsertsort)
                     .addComponent(btrQuicksort))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblQuantidade)
-                    .addComponent(jLabel1))
+                .addComponent(lblTempoTotalEmMilisegundos, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblTempo, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnExecutar)
                     .addComponent(btnCriarTxt))
-                .addGap(26, 26, 26))
+                .addGap(53, 53, 53))
         );
 
         pack();
@@ -261,9 +243,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton btrMergesort;
     private javax.swing.JRadioButton btrQuicksort;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lblQuantidade;
     private javax.swing.JLabel lblTempo;
+    private javax.swing.JLabel lblTempoTotalEmMilisegundos;
     // End of variables declaration//GEN-END:variables
 }

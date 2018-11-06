@@ -51,7 +51,6 @@ public class Ordenacao
         }
         long tempofinal = System.currentTimeMillis();
         this.tempoTotal = tempofinal - tempoinicial;
-        //System.out.println("Tempo de Processamento de InsertionSort: " + tempototal + "ms");
         return vetor;
     }
     
@@ -130,9 +129,7 @@ public class Ordenacao
                 indexDir++;
             }
         }
-        
-        long tempoinicial = System.currentTimeMillis();
-        
+            
         return aux;
     }
     

@@ -1,62 +1,50 @@
 
 package Modelo;
 
+import java.io.IOException;
+
 /**
  *
  * @author julio
  */
 public class Controle 
 {
+    public long tempo;
+    
+    Arquivo arquivo = new Arquivo();
+    Ordenacao ordenacao = new Ordenacao();
+    int[] arrayDesordenado = new int[100000];
+    int[] arrayOrdenado = new int[100000];
+    
+    
+    public void Bubblesort() throws IOException
+    {
+        arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
+        arrayOrdenado = ordenacao.bubbleSort(arrayDesordenado);
+        this.tempo = ordenacao.tempoTotal;
+    }
+    
+    public void Insertionsort() throws IOException
+    {
+        arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
+        arrayOrdenado = ordenacao.insertionSort(arrayOrdenado);
+        this.tempo = ordenacao.tempoTotal;
+    }
+    
+    
+    
+    
+    
     
  
-        public int[] insertionSort(int[] vetor) 
-        {
-            long tempoinicial = System.currentTimeMillis();
-            for (int i = 0; i < vetor.length; i++) 
-            {
-                int atual = vetor[i];
-                int j = i - 1;
-                while (j >= 0 && vetor[j] >= atual) 
-                {
-                    vetor[j + 1] = vetor[j];
-                    j--;
-                }
-                vetor[j + 1] = atual;
-            }
-            long tempofinal = System.currentTimeMillis();
-            long tempototal = tempofinal - tempoinicial;
-            System.out.println("Tempo de Processamento de InsertionSort: " + tempototal + "ms");
-            return vetor;
-        }
- 
-        public int[] bubbleSort(int vetor[]) 
-        {
-            long tempoinicial = System.currentTimeMillis();
-            for (int i = vetor.length; i >= 1; i--) 
-            {
-                for (int j = 1; j < i; j++) 
-                {
-                    if (vetor[j - 1] > vetor[j]) 
-                    {
-                        int aux = vetor[j];
-                        vetor[j] = vetor[j - 1];
-                        vetor[j - 1] = aux;
-                    }
-                }
-            }
-            long tempofinal = System.currentTimeMillis();
-            long tempototal = tempofinal - tempoinicial;
-            System.out.println("Tempo de Processamento de BubbleSort: " + tempototal + "ms");
-            return vetor;
-        }
+        
  
         public int[] mergeSort(int[] array) 
         {
             long tempoinicial = System.currentTimeMillis();
             array = Modelo.Ordenacao.sort(array);
             long tempofinal = System.currentTimeMillis();
-            long tempototal = tempofinal - tempoinicial;
-            System.out.println("Tempo de Processamento de MergeSort: " + tempototal + "ms");
+            this.tempo = tempofinal - tempoinicial;
             return array;
         }
     
@@ -65,17 +53,10 @@ public class Controle
             long tempoinicial = System.currentTimeMillis();
             array = Modelo.Ordenacao.quicksort(array, 0, (array.length - 1));
             long tempofinal = System.currentTimeMillis();
-            long tempototal = tempofinal - tempoinicial;
-            System.out.println("Tempo de Processamento de QuickSort: " + tempototal + "ms");
+            this.tempo = tempofinal - tempoinicial;
             return array;
         }
       
-        public void imprimirVetor(int[] array) 
-        {
-            for (int counter = 0; counter < (array.length - 1); counter++) 
-            {
-                System.out.println(array[counter]);
-            }
-        }
+        
     
 }
