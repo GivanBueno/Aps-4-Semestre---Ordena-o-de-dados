@@ -1,9 +1,6 @@
 
 package Apresentacao;
-import Modelo.Arquivo;
 import Modelo.Controle;
-import Modelo.NumeroRandomico;
-import Modelo.Ordenacao;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -152,18 +149,21 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addComponent(lblObservacao)
                     .addComponent(lblTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTempoTotalEmMilisegundos)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btrInsertsort)
-                        .addGap(53, 53, 53)
-                        .addComponent(btrQuicksort))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btrBubblesort)
-                        .addGap(49, 49, 49)
-                        .addComponent(btrMergesort))
                     .addComponent(btnExecutar)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(lblQtd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblQtdArquivo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(lblQtdArquivo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btrBubblesort)
+                                .addGap(49, 49, 49))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btrInsertsort)
+                                .addGap(53, 53, 53)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btrQuicksort)
+                            .addComponent(btrMergesort))))
                 .addGap(0, 59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

@@ -7,20 +7,13 @@ import java.io.IOException;
  *
  * @author julio
  */
-public class Controle 
+public class Controle extends absPropriedades
 {
     
-    public long tempoBubblesort;
-    public long tempoInsertsort;
-    public long tempoMergesort;
-    public long tempoQuicksort;
-    public long menorTempo;
-    public String nomeOrdenacao;
     
     Arquivo arquivo = new Arquivo();
     Ordenacao ordenacao = new Ordenacao();
-    int[] arrayDesordenado = new int[100000];
-    int[] arrayOrdenado = new int[100000];
+    
     
     
     public void Bubblesort() throws IOException
@@ -49,7 +42,7 @@ public class Controle
     {
         arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
         arrayOrdenado = ordenacao.quickSort(arrayDesordenado);
-        this.tempoQuicksort = ordenacao.tempoTotal;
+        this.tempoQuicksort = ordenacao.tempoTotalQuicksort;
     }
     
     public void Comparacao() throws IOException
@@ -83,6 +76,8 @@ public class Controle
                     this.nomeOrdenacao = "Quicksort ";
                 }
             }
+        
+        
     }
     
     

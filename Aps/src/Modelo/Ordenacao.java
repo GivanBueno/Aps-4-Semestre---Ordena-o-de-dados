@@ -9,12 +9,9 @@ package Modelo;
  *
  * @author julio
  */
-public class Ordenacao 
+public class Ordenacao extends absPropriedades
 {
-    public long tempoTotal;
-    public long tempoTotalBubblesort;
-    public long tempoTotalMergesort;
-    public long tempoTotalInsertsort;
+    
     
      public int[] bubbleSort(int vetor[]) 
     {
@@ -208,7 +205,7 @@ public class Ordenacao
         long tempoinicial = System.currentTimeMillis();
         array = quicksort(array, 0, (array.length - 1));
         long tempofinal = System.currentTimeMillis();
-        this.tempoTotal = tempofinal - tempoinicial;
+        this.tempoTotalQuicksort = tempofinal - tempoinicial;
         return array;
     }
 }
