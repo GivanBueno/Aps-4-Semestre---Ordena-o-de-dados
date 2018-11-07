@@ -92,7 +92,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblQtdArquivo = new javax.swing.JLabel();
         lblQtd = new javax.swing.JLabel();
         lblObservacao = new javax.swing.JLabel();
-        btnBatTeste = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        mniComparacaoDeDesempenho = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ordenação de Dados");
@@ -124,14 +126,21 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         lblObservacao.setText("* Pode demorar um pouco");
 
-        btnBatTeste.setText("Fazer bateria de testes");
-        btnBatTeste.addActionListener(new java.awt.event.ActionListener()
+        jMenu1.setText("Desempenho");
+
+        mniComparacaoDeDesempenho.setText("Comparação de Desempenho");
+        mniComparacaoDeDesempenho.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                btnBatTesteActionPerformed(evt);
+                mniComparacaoDeDesempenhoActionPerformed(evt);
             }
         });
+        jMenu1.add(mniComparacaoDeDesempenho);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,7 +149,6 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBatTeste)
                     .addComponent(lblObservacao)
                     .addComponent(lblTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTempoTotalEmMilisegundos)
@@ -177,11 +185,9 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addComponent(lblQtdArquivo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnExecutar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnBatTeste)
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
                 .addComponent(lblObservacao)
                 .addGap(37, 37, 37))
         );
@@ -209,8 +215,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             
     }//GEN-LAST:event_btnExecutarActionPerformed
 
-    private void btnBatTesteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnBatTesteActionPerformed
-    {//GEN-HEADEREND:event_btnBatTesteActionPerformed
+    private void mniComparacaoDeDesempenhoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_mniComparacaoDeDesempenhoActionPerformed
+    {//GEN-HEADEREND:event_mniComparacaoDeDesempenhoActionPerformed
         try
         {
             frmComparacaoDeOrdenacao frmCdo = new frmComparacaoDeOrdenacao(null, true);
@@ -221,9 +227,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(null, "Erro de Comparação" );
         }
-        
-        
-    }//GEN-LAST:event_btnBatTesteActionPerformed
+    }//GEN-LAST:event_mniComparacaoDeDesempenhoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,17 +265,19 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBatTeste;
     private javax.swing.JButton btnExecutar;
     private javax.swing.JRadioButton btrBubblesort;
     private javax.swing.JRadioButton btrInsertsort;
     private javax.swing.JRadioButton btrMergesort;
     private javax.swing.JRadioButton btrQuicksort;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblObservacao;
     private javax.swing.JLabel lblQtd;
     private javax.swing.JLabel lblQtdArquivo;
     private javax.swing.JLabel lblTempo;
     private javax.swing.JLabel lblTempoTotalEmMilisegundos;
+    private javax.swing.JMenuItem mniComparacaoDeDesempenho;
     // End of variables declaration//GEN-END:variables
 }

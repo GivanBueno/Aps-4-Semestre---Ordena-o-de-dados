@@ -15,6 +15,7 @@ public class Controle
     public long tempoMergesort;
     public long tempoQuicksort;
     public long menorTempo;
+    public String nomeOrdenacao;
     
     Arquivo arquivo = new Arquivo();
     Ordenacao ordenacao = new Ordenacao();
@@ -61,21 +62,25 @@ public class Controle
         if(this.tempoBubblesort < this.tempoInsertsort && this.tempoBubblesort < this.tempoMergesort  && this.tempoBubblesort < this.tempoQuicksort)
         {
             this.menorTempo = this.tempoBubblesort;
+            this.nomeOrdenacao = "Bubblesort ";
         }
         else
             if(this.tempoInsertsort < this.tempoBubblesort && this.tempoInsertsort < this.tempoMergesort && this.tempoInsertsort < this.tempoQuicksort)
             {
                 this.menorTempo = this.tempoInsertsort;
+                this.nomeOrdenacao = "Insertsort ";
             }
             else
             {
                 if(this.tempoMergesort < this.tempoBubblesort && this.tempoMergesort < this.tempoInsertsort && this.tempoMergesort < this.tempoQuicksort)
                 {
                     this.menorTempo = this.tempoMergesort;
+                    this.nomeOrdenacao = "Mergesort ";
                 }
                 else if(this.tempoQuicksort < this.tempoBubblesort && this.tempoQuicksort < this.tempoInsertsort && this.tempoQuicksort < this.tempoMergesort)
                 {
                     this.menorTempo = this.tempoQuicksort;
+                    this.nomeOrdenacao = "Quicksort ";
                 }
             }
     }

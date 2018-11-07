@@ -27,14 +27,12 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="lblTempoInsertsort" max="32767" attributes="0"/>
-                                      <Component id="lblTempoBubblesort" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="lblTempoInsertsort" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="lblTempoBubblesort" alignment="1" max="32767" attributes="0"/>
                                   <Component id="lblQuicksort" max="32767" attributes="0"/>
                                   <Component id="lblMergesort" alignment="0" pref="124" max="32767" attributes="0"/>
                               </Group>
@@ -47,13 +45,12 @@
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="lblOrdenacaoMaisRapida" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="lblExibirTempo" min="-2" pref="117" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="73" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -68,19 +65,19 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblTempoBubblesort" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblExibirTempoBubblesort" alignment="1" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="lblTempoBubblesort" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblTempoInsertsort" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblExibirTempoInsertsort" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                  <Component id="lblTempoInsertsort" min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblMergesort" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblExibirTempoMergesort" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="lblMergesort" min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -88,11 +85,11 @@
                   <Component id="lblExibirTempoQuicksort" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblOrdenacaoMaisRapida" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblExibirTempo" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblExibirTempo" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="lblOrdenacaoMaisRapida" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="77" max="32767" attributes="0"/>
+              <EmptySpace pref="25" max="32767" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
