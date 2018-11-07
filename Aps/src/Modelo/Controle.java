@@ -14,6 +14,7 @@ public class Controle
     public long tempoInsertsort;
     public long tempoMergesort;
     public long tempoQuicksort;
+    public long menorTempo;
     
     Arquivo arquivo = new Arquivo();
     Ordenacao ordenacao = new Ordenacao();
@@ -50,9 +51,33 @@ public class Controle
         this.tempoQuicksort = ordenacao.tempoTotal;
     }
     
-    public void Comparacao()
+    public void Comparacao() throws IOException
     {
+        Bubblesort();
+        Insertsort();
+        Mergesort();
+        Quicksort();
         
+        if(this.tempoBubblesort < this.tempoInsertsort && this.tempoBubblesort < this.tempoMergesort  && this.tempoBubblesort < this.tempoQuicksort)
+        {
+            this.menorTempo = this.tempoBubblesort;
+        }
+        else
+            if(this.tempoInsertsort < this.tempoBubblesort && this.tempoInsertsort < this.tempoMergesort && this.tempoInsertsort < this.tempoQuicksort)
+            {
+                this.menorTempo = this.tempoInsertsort;
+            }
+            else
+            {
+                if(this.tempoMergesort < this.tempoBubblesort && this.tempoMergesort < this.tempoInsertsort && this.tempoMergesort < this.tempoQuicksort)
+                {
+                    this.menorTempo = this.tempoMergesort;
+                }
+                else if(this.tempoQuicksort < this.tempoBubblesort && this.tempoQuicksort < this.tempoInsertsort && this.tempoQuicksort < this.tempoMergesort)
+                {
+                    this.menorTempo = this.tempoQuicksort;
+                }
+            }
     }
     
     

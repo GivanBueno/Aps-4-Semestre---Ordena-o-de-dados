@@ -60,8 +60,14 @@ public class frmPrincipal extends javax.swing.JFrame {
                 }
             }
         }
+    }
+    
+    private void BateriaDeTeste()
+    {
+        Controle controle = new Controle();
+        JOptionPane.showMessageDialog(null, "Tempo do Bubblesort:" + controle.menorTempo );
         
-       
+        
     }
    
 
@@ -72,7 +78,8 @@ public class frmPrincipal extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents()
+    {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         lblTempoTotalEmMilisegundos = new javax.swing.JLabel();
@@ -105,8 +112,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         btrQuicksort.setText("Quicksort");
 
         btnExecutar.setText("Executar");
-        btnExecutar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnExecutar.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
                 btnExecutarActionPerformed(evt);
             }
         });
@@ -116,6 +125,13 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblObservacao.setText("* Pode demorar um pouco");
 
         btnBatTeste.setText("Fazer bateria de testes");
+        btnBatTeste.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnBatTesteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,6 +197,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             {
                 this.Executar();
                 
+                
             }
             catch (IOException ex)
             {
@@ -191,6 +208,22 @@ public class frmPrincipal extends javax.swing.JFrame {
         
             
     }//GEN-LAST:event_btnExecutarActionPerformed
+
+    private void btnBatTesteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnBatTesteActionPerformed
+    {//GEN-HEADEREND:event_btnBatTesteActionPerformed
+        try
+        {
+            frmComparacaoDeOrdenacao frmCdo = new frmComparacaoDeOrdenacao(null, true);
+            frmCdo.setVisible(true);
+        }
+        catch (Exception e)
+        {
+            
+            JOptionPane.showMessageDialog(null, "Erro de Comparação" );
+        }
+        
+        
+    }//GEN-LAST:event_btnBatTesteActionPerformed
 
     /**
      * @param args the command line arguments
