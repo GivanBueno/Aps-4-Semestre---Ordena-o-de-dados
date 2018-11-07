@@ -27,7 +27,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         {
             controle.Bubblesort();
             lblTempo.setText(String.valueOf(controle.tempoBubblesort) + " ms");
-            //lblQtd.setText(String.valueOf(controle.));
+            lblQtd.setText(String.valueOf(controle.tamanhoDoArray));
         }
         else
         {
@@ -35,6 +35,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             {
                 controle.Insertsort();
                 lblTempo.setText(String.valueOf(controle.tempoInsertsort) + " ms");
+                lblQtd.setText(String.valueOf(controle.tamanhoDoArray));
             }
             else
             {
@@ -42,6 +43,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 {
                     controle.Mergesort();
                     lblTempo.setText(String.valueOf(controle.tempoMergesort) + " ms");
+                    lblQtd.setText(String.valueOf(controle.tamanhoDoArray));
                 }
                 else
                 {
@@ -49,6 +51,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                     {
                         controle.Quicksort();
                         lblTempo.setText(String.valueOf(controle.tempoQuicksort) + " ms");
+                        lblQtd.setText(String.valueOf(controle.tamanhoDoArray));
                     }
                     else
                     {
