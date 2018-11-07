@@ -9,7 +9,11 @@ import java.io.IOException;
  */
 public class Controle 
 {
-    public long tempo;
+    
+    public long tempoBubblesort;
+    public long tempoInsertsort;
+    public long tempoMergesort;
+    public long tempoQuicksort;
     
     Arquivo arquivo = new Arquivo();
     Ordenacao ordenacao = new Ordenacao();
@@ -21,41 +25,44 @@ public class Controle
     {
         arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
         arrayOrdenado = ordenacao.bubbleSort(arrayDesordenado);
-        this.tempo = ordenacao.tempoTotal;
+        this.tempoBubblesort = ordenacao.tempoTotalBubblesort;
     }
     
-    public void Insertionsort() throws IOException
+    public void Insertsort() throws IOException
     {
         arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
-        arrayOrdenado = ordenacao.insertionSort(arrayOrdenado);
-        this.tempo = ordenacao.tempoTotal;
+        arrayOrdenado = ordenacao.insertSort(arrayDesordenado);
+        this.tempoInsertsort = ordenacao.tempoTotalInsertsort;
     }
     
+    public void Mergesort() throws IOException
+    {
+        arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
+        arrayOrdenado = ordenacao.mergeSort(arrayDesordenado);
+        this.tempoMergesort = ordenacao.tempoTotalMergesort;
+        
+    }
     
+    public void Quicksort() throws IOException
+    {
+        arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
+        arrayOrdenado = ordenacao.quickSort(arrayDesordenado);
+        this.tempoQuicksort = ordenacao.tempoTotal;
+    }
     
+    public void Comparacao()
+    {
+        
+    }
     
     
     
  
         
  
-        public int[] mergeSort(int[] array) 
-        {
-            long tempoinicial = System.currentTimeMillis();
-            array = Modelo.Ordenacao.sort(array);
-            long tempofinal = System.currentTimeMillis();
-            this.tempo = tempofinal - tempoinicial;
-            return array;
-        }
+       
     
-        public int[] quickSort(int[] array) 
-        {
-            long tempoinicial = System.currentTimeMillis();
-            array = Modelo.Ordenacao.quicksort(array, 0, (array.length - 1));
-            long tempofinal = System.currentTimeMillis();
-            this.tempo = tempofinal - tempoinicial;
-            return array;
-        }
+        
       
         
     

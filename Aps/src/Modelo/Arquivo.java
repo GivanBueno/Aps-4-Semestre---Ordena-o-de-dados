@@ -71,7 +71,7 @@ public class Arquivo
             for (int counter = 0; counter < (array.length - 1); counter++) 
             {
                 bw.write(array[counter]+";");
-                //bw.newLine();
+                
             }
             
             bw.close();

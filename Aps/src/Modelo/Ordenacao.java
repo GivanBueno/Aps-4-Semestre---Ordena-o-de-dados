@@ -12,6 +12,9 @@ package Modelo;
 public class Ordenacao 
 {
     public long tempoTotal;
+    public long tempoTotalBubblesort;
+    public long tempoTotalMergesort;
+    public long tempoTotalInsertsort;
     
      public int[] bubbleSort(int vetor[]) 
     {
@@ -30,12 +33,12 @@ public class Ordenacao
             }
         }
         long tempofinal = System.currentTimeMillis();
-        this.tempoTotal = tempofinal - tempoinicial;
+        this.tempoTotalBubblesort = tempofinal - tempoinicial;
         return vetor;
     }
     
     
-    public int[] insertionSort(int[] vetor) 
+    public int[] insertSort(int[] vetor) 
     {
         long tempoinicial = System.currentTimeMillis();
         for (int i = 0; i < vetor.length; i++) 
@@ -50,7 +53,7 @@ public class Ordenacao
             vetor[j + 1] = atual;;
         }
         long tempofinal = System.currentTimeMillis();
-        this.tempoTotal = tempofinal - tempoinicial;
+        this.tempoTotalInsertsort= tempofinal - tempoinicial;
         return vetor;
     }
     
@@ -134,6 +137,8 @@ public class Ordenacao
     }
     
     
+    
+    
     public static int[] quicksort(int vet[], int ini, int fim)
     {
  
@@ -189,4 +194,21 @@ public class Ordenacao
  
     }
   
+    public int[] mergeSort(int[] array) 
+    {
+        long tempoinicial = System.currentTimeMillis();
+        array = sort(array);
+        long tempofinal = System.currentTimeMillis();
+        this.tempoTotalMergesort = tempofinal - tempoinicial;
+        return array;
+    }
+     
+    public int[] quickSort(int[] array) 
+    {
+        long tempoinicial = System.currentTimeMillis();
+        array = quicksort(array, 0, (array.length - 1));
+        long tempofinal = System.currentTimeMillis();
+        this.tempoTotal = tempofinal - tempoinicial;
+        return array;
+    }
 }
