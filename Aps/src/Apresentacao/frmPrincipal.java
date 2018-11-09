@@ -27,7 +27,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         {
             controle.Bubblesort();
             lblTempo.setText(String.valueOf(controle.tempoBubblesort) + " ms");
-            lblQtd.setText(String.valueOf(controle.tamanhoDoArray));
         }
         else
         {
@@ -35,7 +34,6 @@ public class frmPrincipal extends javax.swing.JFrame {
             {
                 controle.Insertsort();
                 lblTempo.setText(String.valueOf(controle.tempoInsertsort) + " ms");
-                lblQtd.setText(String.valueOf(controle.tamanhoDoArray));
             }
             else
             {
@@ -43,7 +41,6 @@ public class frmPrincipal extends javax.swing.JFrame {
                 {
                     controle.Mergesort();
                     lblTempo.setText(String.valueOf(controle.tempoMergesort) + " ms");
-                    lblQtd.setText(String.valueOf(controle.tamanhoDoArray));
                 }
                 else
                 {
@@ -51,7 +48,6 @@ public class frmPrincipal extends javax.swing.JFrame {
                     {
                         controle.Quicksort();
                         lblTempo.setText(String.valueOf(controle.tempoQuicksort) + " ms");
-                        lblQtd.setText(String.valueOf(controle.tamanhoDoArray));
                     }
                     else
                     {
@@ -89,8 +85,6 @@ public class frmPrincipal extends javax.swing.JFrame {
         btrMergesort = new javax.swing.JRadioButton();
         btrQuicksort = new javax.swing.JRadioButton();
         btnExecutar = new javax.swing.JButton();
-        lblQtdArquivo = new javax.swing.JLabel();
-        lblQtd = new javax.swing.JLabel();
         lblObservacao = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -122,8 +116,6 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
 
-        lblQtdArquivo.setText("Quantidade de Arquivos:");
-
         lblObservacao.setText("* Pode demorar um pouco");
 
         jMenu1.setText("Desempenho");
@@ -153,9 +145,6 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addComponent(lblTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTempoTotalEmMilisegundos)
                     .addComponent(btnExecutar)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(lblQtd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblQtdArquivo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -184,11 +173,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addComponent(lblTempoTotalEmMilisegundos, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTempo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblQtdArquivo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(btnExecutar)
                 .addGap(52, 52, 52)
                 .addComponent(lblObservacao)
@@ -277,8 +262,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblObservacao;
-    private javax.swing.JLabel lblQtd;
-    private javax.swing.JLabel lblQtdArquivo;
     private javax.swing.JLabel lblTempo;
     private javax.swing.JLabel lblTempoTotalEmMilisegundos;
     private javax.swing.JMenuItem mniComparacaoDeDesempenho;

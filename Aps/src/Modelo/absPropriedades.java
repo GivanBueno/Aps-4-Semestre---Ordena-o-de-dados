@@ -17,7 +17,6 @@ public abstract class absPropriedades
     public long tempoQuicksort;
     public long menorTempo;
     public long maiorTempo;
-    public int tamanhoDoArray = 100000;
     public String nomeOrdenacao;
     
     public int[] arrayDesordenado = new int[100000];

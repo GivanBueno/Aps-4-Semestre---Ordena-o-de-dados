@@ -16,25 +16,24 @@ public class Controle extends absPropriedades
     
     
     
-    
     public void Bubblesort() throws IOException
     {
         arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
-        arrayOrdenado = ordenacao.bubbleSort(arrayDesordenado.clone());
+        arrayOrdenado = ordenacao.bubbleSort(arrayDesordenado);
         this.tempoBubblesort = ordenacao.tempoTotalBubblesort;
     }
     
     public void Insertsort() throws IOException
     {
         arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
-        arrayOrdenado = ordenacao.insertSort(arrayDesordenado.clone());
+        arrayOrdenado = ordenacao.insertSort(arrayDesordenado);
         this.tempoInsertsort = ordenacao.tempoTotalInsertsort;
     }
     
     public void Mergesort() throws IOException
     {
         arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
-        arrayOrdenado = ordenacao.mergeSort(arrayDesordenado.clone());
+        arrayOrdenado = ordenacao.mergeSort(arrayDesordenado);
         this.tempoMergesort = ordenacao.tempoTotalMergesort;
         
     }
@@ -42,7 +41,7 @@ public class Controle extends absPropriedades
     public void Quicksort() throws IOException
     {
         arrayDesordenado = arquivo.lerArquivo("ArquivoDesordenado.txt");
-        arrayOrdenado = ordenacao.quickSort(arrayDesordenado.clone());
+        arrayOrdenado = ordenacao.quickSort(arrayDesordenado);
         this.tempoQuicksort = ordenacao.tempoTotalQuicksort;
     }
     
@@ -78,6 +77,18 @@ public class Controle extends absPropriedades
                 }
             }
         
+        
     }
+    
+    
+    
+ 
+        
+ 
+       
+    
+        
+      
+        
     
 }

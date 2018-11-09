@@ -55,10 +55,6 @@
                   <Component id="lblTempo" min="-2" pref="141" max="-2" attributes="0"/>
                   <Component id="lblTempoTotalEmMilisegundos" min="-2" max="-2" attributes="0"/>
                   <Component id="btnExecutar" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="lblQtd" alignment="0" max="32767" attributes="0"/>
-                      <Component id="lblQtdArquivo" alignment="0" max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
@@ -97,11 +93,7 @@
               <Component id="lblTempoTotalEmMilisegundos" min="-2" pref="21" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblTempo" min="-2" pref="29" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="lblQtdArquivo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="lblQtd" min="-2" pref="28" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="17" max="32767" attributes="0"/>
               <Component id="btnExecutar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Component id="lblObservacao" min="-2" max="-2" attributes="0"/>
@@ -157,13 +149,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExecutarActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblQtdArquivo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Quantidade de Arquivos:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblQtd">
     </Component>
     <Component class="javax.swing.JLabel" name="lblObservacao">
       <Properties>
